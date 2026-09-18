@@ -1,0 +1,139 @@
+generated: '2026-09-18'
+method: probed
+source: live GET of /.well-known/* on every host the record knows plus the operating-brand hosts the corporate site footer links
+note: >-
+  No well-known document is served on any host. www.apog.com (an Akamai-fronted Q4/gcs-web
+  investor-relations site) answers HTTP 403 "Access Denied" (errors.edgesuite.net reference)
+  for every path, including the homepage, with a browser User-Agent — an edge bot policy,
+  not a served document. api.apog.com and developer.apog.com do not resolve in DNS (the
+  April 2026 stub invented them). apogeearchmetals.com returns a 202 HTML challenge shell
+  for every /.well-known/* path, which is not a document. No WellKnown or SecurityTxt
+  pointer is emitted because nothing returned a real document.
+hosts:
+- host: www.apog.com
+  note: HTTP 403 Akamai edge "Access Denied" on every path, including /
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: apog.com
+  note: 301 to www.apog.com, which answers 403 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: api.apog.com
+  note: host does not resolve in DNS (no A/AAAA record); it was invented by the 2026-04-19 stub
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+- host: developer.apog.com
+  note: host does not resolve in DNS (no A/AAAA record); it was invented by the 2026-04-19 stub
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+- host: apogeearchmetals.com
+  note: Apogee Architectural Metals brand site (EFCO + Tubelite now redirect here); every path returns a 202 HTML challenge shell, not a document
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+  - path: /.well-known/openid-configuration
+    status: 202
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+  - path: /.well-known/api-catalog
+    status: 202
+  - path: /.well-known/ai-plugin.json
+    status: 202
+  - path: /.well-known/agent-card.json
+    status: 202
+  - path: /.well-known/agent.json
+    status: 202
+- host: viracon.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.harmoninc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: alumicor.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: linetec.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: tru-vue.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

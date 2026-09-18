@@ -4,31 +4,28 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Apogee Enterprises
 providerId: apog-enterprises
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
+# Provenance: first written by the 2026-05-04 API Evangelist bulk sweep (roadmap#35);
+# re-searched against the provider surface on 2026-09-18 and reduced to an honest zero.
+method: searched
+modified: '2026-09-18'
 reconciled: false
 tags:
   - Rate Limiting
   - Architectural
   - Glass
-description: Apogee Enterprises does not publish public API rate limits. Any rate limits would be defined
-  in private partner integration contracts.
-notes: No public rate-limit documentation exists.
+description: >-
+  Apogee Enterprises publishes no API and therefore no API rate limits. The corporate site is an
+  investor-relations property (HTML and PDF only) and the supplier portal is Coupa's; neither
+  documents any Apogee-operated endpoint, throttling window or rate-limit header.
+notes: >-
+  No public rate-limit documentation exists. limit_count is 0 on purpose. The 2026-05-04 sweep
+  had padded this file with a "Partner API limits" row, a 429 throttled code and a backoff
+  policy; those were invented and were removed on 2026-09-18.
+limit_count: 0
 sources:
   - https://www.apog.com
-responseCodes:
-  throttled: 429
-limits:
-  - name: Partner API limits
-    scope: contract
-    metric: varies
-    limit: see partner contract
-    notes: Defined per partner integration contract; not publicly published.
-policies:
-  - name: Backoff Strategy
-    description: Implement exponential backoff with jitter; honor Retry-After when present.
+  - https://www.apog.com/supplier-portal
+limits: []
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

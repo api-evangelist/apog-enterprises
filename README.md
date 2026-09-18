@@ -64,7 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Apogee Enterprises is a major US corporation and Fortune 1000 company. The Apogee Enterprises API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Apogee Enterprises (Nasdaq: APOG) is a Minneapolis-based architectural products and services company — architectural glass (Viracon), aluminum framing, storefront and curtainwall systems (Apogee Architectural Metals, Alumicor, Linetec), facade installation (Harmon) and large-scale optical glass (Tru Vue, UW Solutions). It publishes no developer API; its only machine-readable data is the SEC's EDGAR filings API, listed here as a third-party channel.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/apog-enterprises/refs/heads/main/apis.yml)
 
@@ -77,7 +77,7 @@ Apogee Enterprises is a major US corporation and Fortune 1000 company. The Apoge
 ## Timestamps
 
 - **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+- **Modified:** 2026-09-18
 
 ## Maintainers
 

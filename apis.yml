@@ -2,61 +2,177 @@ aid: apog-enterprises
 url: https://raw.githubusercontent.com/api-evangelist/apog-enterprises/refs/heads/main/apis.yml
 name: Apogee Enterprises
 type: Index
+kind: company
+position: Consuming
 deliveryModel:
   model: unknown
   open_source: false
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: No callable host — the company publishes no API
+  confidence: high
   source:
-  - none
-  generated: '2026-08-28'
-  method: derived
+  - probe
+  generated: '2026-09-18'
+  method: probed
 accessModel:
-  pricing: enterprise
+  pricing: unknown
   onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Enterprise
-  confidence: medium
+  label: No public API program
+  confidence: high
   source:
   - plans
-  generated: '2026-07-22'
-  method: derived
+  generated: '2026-09-18'
+  method: researched
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apog-enterprises.png
 tags:
   - Glass
-  - Architectural
-  - Frames
+  - Architectural Glass
+  - Architectural Framing
+  - Storefront Systems
+  - Curtainwall
+  - Building Products
+  - Construction
+  - Investor Relations
+  - Fortune 1000
 description: >-
-  Apogee Enterprises is a major US corporation and Fortune 1000 company. The Apogee Enterprises API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Apogee Enterprises (Nasdaq: APOG), founded in 1949 as the Harmon Glass Company and headquartered
+  in Minneapolis, Minnesota, is an architectural products and services company. Its operating
+  brands make high-performance architectural glass (Viracon), aluminum framing, storefront,
+  curtainwall and entrance systems (Apogee Architectural Metals — the former EFCO and Tubelite —
+  and Alumicor, with Linetec finishing), install glass and metal facades on large commercial
+  buildings (Harmon) and produce large-scale optical glass and acrylic for framing and displays
+  (Tru Vue, UW Solutions). Apogee does not publish a public developer API, SDK, webhook or
+  developer portal. Its external digital surface is an Akamai-fronted investor-relations website at
+  apog.com serving HTML and PDF, plus supplier onboarding on Coupa's Supplier Portal; the
+  "EDI/API/Integration contact" named there is a Coupa user role, not an Apogee API. The hosts
+  api.apog.com and developer.apog.com listed by an earlier stub do not exist in DNS. Machine-readable
+  company data is available only through third-party channels, namely the SEC's EDGAR APIs.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-18'
 specificationVersion: '0.23'
 apis:
-  - aid: apog-enterprises:apog-enterprises-api
-    name: Apogee Enterprises API
-    tags:
-      - Glass
-      - Architectural
-      - Frames
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.apog.com
-    humanURL: https://developer.apog.com
-    properties:
-      - url: https://developer.apog.com/docs
-        type: Documentation
+  - aid: apog-enterprises:sec-edgar-filings
+    name: SEC EDGAR Filings (Apogee Enterprises, CIK 6845)
     description: >-
-      The Apogee Enterprises API provides access to platform services and data for enterprise integration and automation.
+      Machine-readable filing data for Apogee Enterprises is available from the U.S. Securities and
+      Exchange Commission, not from the company. The SEC EDGAR submissions API returns the full filing
+      history for CIK 0000006845 (ticker APOG, Nasdaq; SIC 3231 Glass Products, Made of Purchased
+      Glass) as JSON. This is a third-party government API listed here because it is the only real
+      programmatic access to this company's data.
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apog-enterprises.png
+    humanURL: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+    baseURL: https://data.sec.gov
+    tags:
+      - Filings
+      - SEC EDGAR
+      - Third Party
+    properties:
+      - type: Documentation
+        url: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+      - type: APIReference
+        url: https://data.sec.gov/submissions/CIK0000006845.json
+    x-evidence:
+      verified: '2026-09-18'
+      method: fetched documentation and called the endpoint
+      documentation: >-
+        The SEC's EDGAR APIs page documents RESTful JSON APIs on data.sec.gov —
+        https://data.sec.gov/submissions/CIK##########.json plus the XBRL companyconcept,
+        companyfacts and frames APIs. No authentication or API key required; a declared User-Agent
+        and a 10-request-per-second ceiling are the stated fair-access terms.
+      endpoint_check: >-
+        GET https://data.sec.gov/submissions/CIK0000006845.json returned HTTP 200 with JSON naming
+        "APOGEE ENTERPRISES, INC.", ticker APOG on Nasdaq, state of incorporation MN, and a most
+        recent filing (Form 4) dated 2026-09-15.
 common:
-  - type: DomainSecurity
-    url: security/apog-enterprises-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/apogee-enterprises
   - type: Website
     url: https://www.apog.com
+  - type: InvestorRelations
+    url: https://www.apog.com/investor-relations
+  - type: PressReleases
+    url: https://www.apog.com/news-releases
+  - type: Sustainability
+    url: https://www.apog.com/sustainability
+  - type: Suppliers
+    url: https://www.apog.com/supplier-portal
+  - type: Careers
+    url: https://apog.wd1.myworkdayjobs.com/Apogee
+  - type: PrivacyPolicy
+    url: https://www.apog.com/privacy-policy
+  - type: TermsOfService
+    url: https://www.apog.com/terms-use
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/apogee-enterprises
+  - type: Twitter
+    url: https://twitter.com/apogeeglass
+  - type: YouTube
+    url: https://www.youtube.com/user/ApogeeEnterprisesInc
+  - type: Plans
+    url: plans/apog-enterprises-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apog-enterprises-rate-limits.yml
+  - type: DomainSecurity
+    url: security/apog-enterprises-domain-security.yml
+  - type: Features
+    data:
+      - name: Architectural Glass (Viracon)
+        description: High-performance insulating, laminated and coated architectural glass for commercial buildings.
+      - name: Architectural Framing Systems
+        description: Aluminum window, storefront, curtainwall and entrance systems from Apogee Architectural Metals (formerly EFCO and Tubelite) and Alumicor, with Linetec architectural finishing.
+      - name: Architectural Services (Harmon)
+        description: Design, engineering, fabrication and installation of glass and metal building facades.
+      - name: Large-Scale Optical (Tru Vue, UW Solutions)
+        description: Glass and acrylic for custom picture framing, museums, displays and industrial applications.
+      - name: SEC Filings and Investor Reporting
+        description: Quarterly earnings, annual reports and SEC filings published as HTML and PDF through the investor relations site and EDGAR.
+  - type: UseCases
+    data:
+      - name: Investment Research
+        description: Analyze Apogee Enterprises (Nasdaq:APOG) financial performance and segment reporting through EDGAR filings and investor materials.
+      - name: Supply Chain and Procurement
+        description: Suppliers onboard and transact through Apogee's Coupa Supplier Portal and reference its supplier terms, conditions and policies.
+      - name: ESG Reporting
+        description: Access sustainability disclosures on people, products, operations and community published through the corporate site.
+  - type: Integrations
+    data:
+      - name: SEC EDGAR
+        description: All filings for CIK 0000006845 are available through EDGAR and the SEC's public JSON APIs at data.sec.gov.
+      - name: Coupa Supplier Portal
+        description: Supplier registration, purchase orders and invoicing run on Coupa; support at coupasupport@apog.com.
+      - name: Workday
+        description: Careers and job applications are hosted on Workday (apog.wd1.myworkdayjobs.com).
+      - name: Nasdaq
+        description: Shares trade on Nasdaq under the ticker APOG.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Apogee is an architectural glass and framing manufacturer whose only web surface is an
+    Akamai-fronted investor-relations site; the api.apog.com and developer.apog.com hosts the
+    April 2026 stub listed do not resolve in DNS, and the only "API" mention on its site is a Coupa
+    Supplier Portal user role.
+  evidence:
+    - url: https://api.apog.com/openapi.json
+      status: 0
+    - url: https://developer.apog.com/docs
+      status: 0
+    - url: https://www.apog.com/.well-known/api-catalog
+      status: 403
+    - url: https://www.apog.com/supplier-portal
+      status: 403
+    - url: https://data.sec.gov/submissions/CIK0000006845.json
+      status: 200
+  checked: '2026-09-18'
+x-enrichment:
+  date: '2026-09-18'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v3

@@ -4,42 +4,35 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Apogee Enterprises
 providerId: apog-enterprises
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
+# Provenance: first written by the 2026-05-04 API Evangelist bulk sweep (roadmap#35);
+# re-searched against the provider surface on 2026-09-18 and reduced to an honest zero.
+method: searched
+modified: '2026-09-18'
 reconciled: false
 tags:
   - Glass
   - Architectural
-  - Frames
-description: Apogee Enterprises is a publicly traded U.S. architectural products company (glass, framing,
-  storefront systems). It does not publish a public commercial developer API or a public API pricing page.
-  Any partner integrations are presumed to be private B2B contracts negotiated directly with Apogee or
-  its operating segments (Architectural Framing Systems, Architectural Glass, Architectural Services,
-  Large-Scale Optical).
-notes: No public API plans or pricing exist. Scaffold trimmed to a placeholder partner-integration plan.
+  - Framing
+  - Investor Relations
+description: >-
+  Apogee Enterprises (Nasdaq: APOG) is an architectural products company — high-performance
+  architectural glass (Viracon), aluminum framing, storefront and entrance systems (Apogee
+  Architectural Metals, formerly EFCO and Tubelite; Alumicor; Linetec finishing), installation
+  services (Harmon) and large-scale optical glass and acrylic (Tru Vue, UW Solutions). It publishes
+  no developer API, no API plans and no API pricing page. Its only public web surface is an
+  investor-relations site; its supplier onboarding runs on Coupa's Supplier Portal, where the
+  "EDI/API/Integration contact" is a Coupa user role, not an Apogee API.
+notes: >-
+  No public API plans or pricing exist. plan_count is 0 on purpose. The 2026-05-04 sweep had
+  padded this file with a placeholder "Partner / Custom Integration" plan; that row was
+  invented and was removed on 2026-09-18 — nothing on the provider's surface describes any
+  partner API contract.
+plan_count: 0
 sources:
   - https://www.apog.com
-plans:
-  - id: apog-enterprises-partner
-    name: Partner / Custom Integration
-    type: enterprise
-    description: Bespoke integration negotiated with Apogee Enterprises for partners, suppliers, or large
-      customers; not a published commercial API offering.
-    entries:
-      - label: Custom integration
-        name: custom_integration
-        type: subscription
-        metric: varies
-        limit: -1
-        timeFrame: usage
-        geo: US
-        unit: 1
-        price: contact provider
-        userMultiplied: false
-    elements:
-      - name: Direct partner contract
+  - https://www.apog.com/supplier-portal
+  - https://www.apog.com/supplier-portal/coupa-supplier-portal-instructions/manage-your-account
+plans: []
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
