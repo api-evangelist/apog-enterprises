@@ -100,6 +100,8 @@ apis:
         "APOGEE ENTERPRISES, INC.", ticker APOG on Nasdaq, state of incorporation MN, and a most
         recent filing (Form 4) dated 2026-09-15.
 common:
+  - type: FinOps
+    url: finops/apog-enterprises-finops.yml
   - type: Website
     url: https://www.apog.com
   - type: InvestorRelations
